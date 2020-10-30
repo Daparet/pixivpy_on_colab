@@ -53,7 +53,7 @@ def binary_check(searchtag, apilogin, range_num):
   try:
     illust_len = len(json_result.response)
   except:
-    binary_num = binary_search(apilogin,range_num)
+    binary_num = binary_search(searchgtag, apilogin, range_num)
     if binary_num < range_num:
       range_num = binary_num
   return range_num
