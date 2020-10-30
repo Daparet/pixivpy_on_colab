@@ -166,7 +166,7 @@ def insertbar(dirname):
   dirname = "".join(listname)
   return dirname
 
-def generate(searchtag, R18mode, apilogin):
+def generate(searchtag, R18mode):
   range_num = 666
   dirname = searchtag
   apilogin  = login("bixiv12345", "pixiv12345")  #login("ユーザーネーム","パスワード")の順で入力
