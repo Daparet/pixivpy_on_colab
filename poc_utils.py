@@ -61,7 +61,7 @@ def binary_check(searchtag, apilogin, range_num):
 def search_and_save(searchtag, apilogin, min_score, range_num, dirname, R18mode):
   api = apilogin
   aapi = AppPixivAPI()
-  saving_dir_path = os.path.join("/content/pixivpy_on_colab/", dirname)
+  saving_dir_path = os.path.join("/content/", dirname)
   if not os.path.exists(saving_dir_path):
     os.mkdir(saving_dir_path)
 
@@ -105,7 +105,7 @@ def search_and_save(searchtag, apilogin, min_score, range_num, dirname, R18mode)
   print('\n' + "完了! " + str(illsut_hitsum) + " / " + str(illsut_sum) + "件を取得しました！")
 
 def gifdelete(dirname):
-  path = "/content/pixivpy_on_colab/" + dirname
+  path = "/content/" + dirname
 
   files = os.listdir(path)
   files_file = [f for f in files if os.path.isfile(os.path.join(path, f))]
@@ -120,7 +120,7 @@ def gifdelete(dirname):
 def preview(dirname):
   dirname = insertbar(dirname)
   gifdelete(dirname)
-  path = "/content/pixivpy_on_colab/" + dirname
+  path = "/content/" + dirname
 
   files = os.listdir(path)
   files_file = [f for f in files if os.path.isfile(os.path.join(path, f))]
