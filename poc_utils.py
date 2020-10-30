@@ -15,7 +15,7 @@ def login(id, password):
   api.login(id, password)
   return api
 
-def binary_search(apilogin, range_num):
+def binary_search(searchtag, apilogin, range_num):
   api = apilogin
   aapi = AppPixivAPI()
 
