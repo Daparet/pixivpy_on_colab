@@ -45,7 +45,7 @@ def clearLabel(_ax):
   _ax.axis('off')
   return _ax
 
-def binary_check(apilogin,range_num):
+def binary_check(searchtag, apilogin, range_num):
   api = apilogin
   aapi = AppPixivAPI()
 
@@ -58,7 +58,7 @@ def binary_check(apilogin,range_num):
       range_num = binary_num
   return range_num
 
-def search_and_save(apilogin, searchtag, min_score, range_num, dirname, R18mode):
+def search_and_save(searchtag, apilogin, min_score, range_num, dirname, R18mode):
   api = apilogin
   aapi = AppPixivAPI()
   saving_dir_path = os.path.join("/content/", dirname)
@@ -177,9 +177,9 @@ def generate(searchtag, R18mode):
       dirname = dirname + "(A)"
 
   dirname = insertbar(dirname)
-  binary_num = binary_check(apilogin,range_num)
+  binary_num = binary_check(searchtag,apilogin,range_num)
   min_score = max(int((math.log(binary_num,10)**4)*700), 2000)
   print(searchtag + " タグの画像を探索しています…(1ページにつき30枚、最大666ページ)")
-  search_and_save(apilogin, searchtag, min_score, binary_num, dirname, R18mode)
+  search_and_save(searchtag, apilogin, min_score, binary_num, dirname, R18mode)
   print()
   preview(dirname)
