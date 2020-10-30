@@ -28,7 +28,7 @@ def binary_search(searchtag, apilogin, range_num):
       json_result = api.search_works(searchtag, page=target+i, mode='tag')
       try:
         illust_len = len(json_result.response)
-      except TypeError as e:
+      except:
         errorcount = errorcount + 1
       sleep(0.2)
     if errorcount == 1:
@@ -52,7 +52,7 @@ def binary_check(searchtag, apilogin, range_num):
   json_result = api.search_works(searchtag, page=range_num, mode='tag')
   try:
     illust_len = len(json_result.response)
-  except TypeError as e:
+  except:
     binary_num = binary_search(apilogin,range_num)
     if binary_num < range_num:
       range_num = binary_num
